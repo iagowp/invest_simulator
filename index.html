@@ -1,5 +1,30 @@
 <html>
-  <h1>TESTANDO2</h1>
+  <h1>Calculadoras Financeiras</h1>
+  <h2>Projetor financeiro</h2>
+  <label for="initial">Valor inicial:</label>
+  <input type="number" id="initial">
+  <br/>
+  <label for="time">Tempo em anos:</label>
+  <input type="number" id="time">
+  <br/>
+  <label for="recurrent">Investimento mensal:</label>
+  <input type="number" id="recurrent">
+  <br/>
+  <label for="interest">Rendimento em porcentagem mensal: (5% seria 5)</label>
+  <input type="number" id="interest">
+  <br/>
+  <input type="button" value="Calcular" onclick="useProjector()">
+  <h3 id="result_projector"></h3>
+
   <script src="./projection.js"></script>
   <script src="./retiring.js"></script>
+  <script>
+    function useProjector(){
+      var initial = document.getElementById("initial").value;
+      var time = document.getElementById("time").value * 12;
+      var recurrent = document.getElementById("recurrent").value;
+      var interest = (document.getElementById("initial").value / 100) + 1;
+      document.getElementById("result_projector").innerHTML = projector({initial, time, recurrent, interest});
+    }
+  </script>
 </html>
