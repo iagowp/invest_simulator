@@ -29,6 +29,7 @@
   <label for="r_goal">Objetivo</label>
   <input type="number" id="r_goal">
   <br/>
+  <div style="color: lightskyblue;" onclick="calculateGoal()">Não sabe quanto você precisa pra se aposentar? Clique aqui para uma sugestão</div>
   <input type="button" value="Calcular" onclick="useRetirer()">
   <h3 id="result_retirer"></h3>
 
@@ -49,6 +50,11 @@
       let goal = Number(document.getElementById("r_goal").value);
       let interest = (document.getElementById("r_interest").value / 100) + 1;
       document.getElementById("result_retirer").innerHTML = "Quanto você deve investir por mês: " + retiring({initial, time, goal, interest});
+    }
+
+    function calculateGoal(){
+      monthlyRate = Number(prompt('Quanto você gasta por mês em média durante um ano?'));
+      alert('Sugerimos usar como objetivo o valor de ' + monthlyRate * 12 * 25);
     }
   </script>
 </html>
