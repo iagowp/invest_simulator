@@ -20,10 +20,10 @@
   <script src="./retiring.js"></script>
   <script>
     function useProjector(){
-      var initial = document.getElementById("initial").value;
+      var initial = Number(document.getElementById("initial").value);
       var time = document.getElementById("time").value * 12;
-      var recurrent = document.getElementById("recurrent").value;
-      var interest = (document.getElementById("initial").value / 100) + 1;
+      var recurrent = Number(document.getElementById("recurrent").value);
+      var interest = (document.getElementById("interest").value / 100) + 1;
       document.getElementById("result_projector").innerHTML = projector({initial, time, recurrent, interest});
     }
   </script>
