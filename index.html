@@ -1,33 +1,33 @@
 <html>
   <h1>Calculadoras Financeiras</h1>
   <h2>Projetor financeiro</h2>
-  <label for="initial">Valor inicial:</label>
-  <input type="number" id="initial">
+  <label for="p_initial">Valor inicial:</label>
+  <input type="number" id="p_initial">
   <br/>
-  <label for="time">Tempo em anos:</label>
-  <input type="number" id="time">
+  <label for="p_time">Tempo em anos:</label>
+  <input type="number" id="p_time">
   <br/>
-  <label for="recurrent">Investimento mensal:</label>
-  <input type="number" id="recurrent">
+  <label for="p_recurrent">Investimento mensal:</label>
+  <input type="number" id="p_recurrent">
   <br/>
-  <label for="interest">Rendimento em porcentagem mensal: (5% seria 5)</label>
-  <input type="number" id="interest">
+  <label for="p_interest">Rendimento em porcentagem mensal: (5% seria 5)</label>
+  <input type="number" id="p_interest">
   <br/>
   <input type="button" value="Calcular" onclick="useProjector()">
   <h3 id="result_projector"></h3>
 
   <h2>Aposentador</h2>
-  <label for="initial">Valor inicial:</label>
-  <input type="number" id="initial">
+  <label for="r_initial">Valor inicial:</label>
+  <input type="number" id="r_initial">
   <br/>
-  <label for="time">Tempo em anos:</label>
-  <input type="number" id="time">
+  <label for="r_time">Tempo em anos:</label>
+  <input type="number" id="r_time">
   <br/>
-  <label for="interest">Rendimento em porcentagem mensal: (5% seria 5)</label>
-  <input type="number" id="interest">
+  <label for="r_interest">Rendimento em porcentagem mensal: (5% seria 5)</label>
+  <input type="number" id="r_interest">
   <br/>
-  <label for="goal">Objetivo</label>
-  <input type="number" id="goal">
+  <label for="r_goal">Objetivo</label>
+  <input type="number" id="r_goal">
   <br/>
   <input type="button" value="Calcular" onclick="useRetirer()">
   <h3 id="result_retirer"></h3>
@@ -36,18 +36,18 @@
   <script src="./retiring.js"></script>
   <script>
     function useProjector(){
-      let initial = Number(document.getElementById("initial").value);
-      let time = document.getElementById("time").value * 12;
-      let recurrent = Number(document.getElementById("recurrent").value);
-      let interest = (document.getElementById("interest").value / 100) + 1;
+      let initial = Number(document.getElementById("p_initial").value);
+      let time = document.getElementById("p_time").value * 12;
+      let recurrent = Number(document.getElementById("p_recurrent").value);
+      let interest = (document.getElementById("p_interest").value / 100) + 1;
       document.getElementById("result_projector").innerHTML = "Resultado: " + projector({initial, time, recurrent, interest});
     }
 
     function useRetirer(){
-      let initial = Number(document.getElementById("initial").value);
-      let time = document.getElementById("time").value * 12;
-      let goal = Number(document.getElementById("goal").value);
-      let interest = (document.getElementById("interest").value / 100) + 1;
+      let initial = Number(document.getElementById("r_initial").value);
+      let time = document.getElementById("r_time").value * 12;
+      let goal = Number(document.getElementById("r_goal").value);
+      let interest = (document.getElementById("r_interest").value / 100) + 1;
       document.getElementById("result_retirer").innerHTML = "Resultado: " + retiring({initial, time, goal, interest});
     }
   </script>
