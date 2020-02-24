@@ -1,6 +1,6 @@
 <html>
   <h1>Calculadoras Financeiras</h1>
-  <h2>Projetor financeiro</h2>
+  <h2>Projetor financeiro: Investindo X por mês, quanto você vai ter daqui Y tempo</h2>
   <label for="p_initial">Valor inicial:</label>
   <input type="number" id="p_initial">
   <br/>
@@ -16,7 +16,7 @@
   <input type="button" value="Calcular" onclick="useProjector()">
   <h3 id="result_projector"></h3>
 
-  <h2>Aposentador</h2>
+  <h2>Aposentador: Quanto você precisa investir mensalmente pra se aposentar em x anos</h2>
   <label for="r_initial">Valor inicial:</label>
   <input type="number" id="r_initial">
   <br/>
@@ -29,7 +29,7 @@
   <label for="r_goal">Objetivo</label>
   <input type="number" id="r_goal">
   <br/>
-  <div style="color: lightskyblue;" onclick="calculateGoal()">Não sabe quanto você precisa pra se aposentar? Clique aqui para uma sugestão</div>
+  <div style="color: lightskyblue; cursor: pointer;" onclick="calculateGoal()">Não sabe quanto você precisa pra se aposentar? Clique aqui para uma sugestão</div>
   <input type="button" value="Calcular" onclick="useRetirer()">
   <h3 id="result_retirer"></h3>
 
