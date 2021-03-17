@@ -42,7 +42,7 @@
       let time = document.getElementById("p_time").value * 12;
       let recurrent = Number(document.getElementById("p_recurrent").value);
       let interest = (document.getElementById("p_interest").value / 100) + 1;
-      document.getElementById("result_projector").innerHTML = "Resultado: " + formater.format(({initial, time, recurrent, interest}));
+      document.getElementById("result_projector").innerHTML = "Resultado: " + formater.format(projector({initial, time, recurrent, interest}));
     }
 
     function useRetirer(){
