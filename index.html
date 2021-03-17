@@ -36,12 +36,13 @@
   <script src="./projection.js"></script>
   <script src="./retiring.js"></script>
   <script>
+    var formater = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
     function useProjector(){
       let initial = Number(document.getElementById("p_initial").value);
       let time = document.getElementById("p_time").value * 12;
       let recurrent = Number(document.getElementById("p_recurrent").value);
       let interest = (document.getElementById("p_interest").value / 100) + 1;
-      document.getElementById("result_projector").innerHTML = "Resultado: " + projector({initial, time, recurrent, interest});
+      document.getElementById("result_projector").innerHTML = "Resultado: " + formater.format(({initial, time, recurrent, interest}));
     }
 
     function useRetirer(){
@@ -49,7 +50,7 @@
       let time = document.getElementById("r_time").value * 12;
       let goal = Number(document.getElementById("r_goal").value);
       let interest = (document.getElementById("r_interest").value / 100) + 1;
-      document.getElementById("result_retirer").innerHTML = "Quanto você deve investir por mês: " + retiring({initial, time, goal, interest});
+      document.getElementById("result_retirer").innerHTML = "Quanto você deve investir por mês: " + formater.format(retiring({initial, time, goal, interest}));
     }
 
     function calculateGoal(){
