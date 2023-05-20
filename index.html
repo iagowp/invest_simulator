@@ -50,7 +50,7 @@
       let time = document.getElementById("r_time").value * 12;
       let goal = Number(document.getElementById("r_goal").value);
       let interest = (document.getElementById("r_interest").value / 100) + 1;
-      document.getElementById("result_retirer").innerHTML = "Quanto você deve investir por mês: " + formater.format(retiring({initial, time, goal, interest}));
+      document.getElementById("result_retirer").innerHTML = "Quanto você deve investir por mês: " + formater.format(acceleratedRetiring({initial, time, goal, interest}));
     }
 
     function calculateGoal(){
